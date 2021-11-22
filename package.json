@@ -1,0 +1,36 @@
+{
+  "name": "goblinGame1",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:AnnaKulikovskikh/goblinGame1.git",
+  "author": "Anna <k_anna_i@mail.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
+    "babel-jest": "^27.3.1",
+    "babel-loader": "^8.2.3",
+    "core-js": "3",
+    "css-loader": "^6.5.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "html-loader": "^3.0.1",
+    "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.3.1",
+    "mini-css-extract-plugin": "^2.4.5",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "terser-webpack-plugin": "^5.2.5",
+    "webpack": "^5.64.2",
+    "webpack-cli": "^4.9.1",
+    "webpack-dev-server": "^4.5.0",
+    "webpack-merge": "^5.8.0"
+  },
+  "scripts": {
+    "build": "webpack --config webpack.prod.js",
+    "test": "jest",
+    "start": "webpack-dev-server --config webpack.dev.js",
+    "lint": "eslint",
+    "coverage": "jest --coverage"
+  }
+}
