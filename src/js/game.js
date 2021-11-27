@@ -1,35 +1,25 @@
+import gameOver  from './gameOver';
+
 const holes = document.querySelectorAll('.hole')
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
-let bach = 0;
-let oops = 0;
 
-for (i = 0; i < holes.length; i++){
-  holes[i].onclick = game;
-}
-
-function game(){
+export default function game(){
+  document.getElementById('lost').textContent = Number(document.getElementById('lost').textContent) - 1;
   let kill = this.classList.contains('hole_has-mole');
   if(kill){
-    bach += 1;
-    dead.textContent = bach;
+    dead.textContent = Number(dead.textContent) + 1;
     } else {
-      oops += 1;
-      lost.textContent = oops;
+      lost.textContent = Number(lost.textContent) + 1;
     }
-  if (bach == 10){
+  if (dead.textContent == "10"){
     alert('Ура, вы победили!');
-    gameOver()
+    gameOver();
   }
-  if (oops == 5){
+  if (lost.textContent == "5"){
     alert('Надо больше тренироваться...');
-    gameOver()
+    gameOver();
   }
+  change();
 }
 
-function gameOver(){
-  bach = 0;
-  dead.textContent = bach;
-  oops = 0;
-  lost.textContent = oops;
-}
