@@ -9,7 +9,8 @@
     "start": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "lint": "eslint .",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "devDependencies": {
     "@babel/cli": "^7.16.0",
