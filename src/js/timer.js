@@ -1,13 +1,18 @@
-import gameOver from './gameOver';
-import change from './change';
+import Skip from './skip';
 
-// const holes = [...document.getElementsByClassName('hole')];
+export default class Timer {
+  constructor() {
+    this.timerId
+  }
+  static start() {
+    this.timerId = setTimeout(Skip, 1000);
+    // this.timerId = setTimeout(function tick() {
+    //   Skip();
+    //   this.timerId = setTimeout(tick, 1000);
+    // }, 1000);     
+  }
 
-export default function timer() {
-  change();
-  document.getElementById('lost').textContent = Number(document.getElementById('lost').textContent) + 1;
-  if (Number(document.getElementById('lost').textContent) === 6) {
-    alert('Надо больше тренироваться...');
-    gameOver();
+  static stop() {
+    clearTimeout(this.timerId);
   }
 }

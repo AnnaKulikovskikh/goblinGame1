@@ -1,11 +1,13 @@
 import gameOver from './gameOver';
 import change from './change';
+import Timer from "./timer";
 
 const dead = document.getElementById('dead');
 const lost = document.getElementById('lost');
 
 export default function game() {
-  document.getElementById('lost').textContent = Number(document.getElementById('lost').textContent) - 1;
+  Timer.stop();
+  //document.getElementById('lost').textContent = Number(document.getElementById('lost').textContent) - 1;
   const kill = this.classList.contains('hole_has-mole');
   if (kill) {
     dead.textContent = Number(dead.textContent) + 1;

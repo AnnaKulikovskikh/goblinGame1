@@ -1,3 +1,5 @@
+import Timer from "./timer";
+
 const holes = [...document.getElementsByClassName('hole')];
 
 export default function change() {
@@ -14,4 +16,5 @@ export default function change() {
     rnd = Math.floor(Math.random() * 16);
   }
   holes[rnd].classList.add('hole_has-mole');
+  Timer.start();
 }
