@@ -11,7 +11,7 @@ export default class Game {
     for (let i = 0; i < this.holes.length; i += 1) {
       this.holes[i].addEventListener('click', () => this.clicker(i));
     }
-    this.timerId = setTimeout(this.skip, 1000);
+    this.timerId = setTimeout( () => this.skip(), 1000);
   }
 
   skip() {
@@ -55,7 +55,7 @@ export default class Game {
       rnd = Math.floor(Math.random() * 16);
     }
     this.holes[rnd].classList.add('hole_has-mole');
-    this.timerId = setTimeout(this.skip, 1000);
+    this.timerId = setTimeout( () => this.skip(), 1000);
   }
 
   gameOver() {
